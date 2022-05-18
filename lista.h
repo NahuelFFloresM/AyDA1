@@ -8,17 +8,17 @@ template <typename elemL> class Lista{
         nodo_lista * sig;
     };
 
-    public:
+    /*public:
         class Iterador {
             friend class Lista;
         public:
-            Elem & elemento_actual();
+            elemL & elemento_actual();
             void avanzar();
             bool llego_al_final() const;
         private:
             Iterador(Nodo * inicio) { it = inicio; }
             Nodo * it;
-        }; // class Iterador
+        }; // class Iterador*/
 
 
     int cant;
@@ -31,7 +31,7 @@ template <typename elemL> class Lista{
 
     nodo_lista * Primero;
 
-    Iterador devolver_iterador() { return Iterador(inicio); }
+//    Iterador devolver_iterador() { return Iterador(inicio); }
 
     void agregar(const elemL elemento , int posicion = 1);
 

@@ -123,7 +123,7 @@ template <typename elemL> void Lista<elemL>::mostrar_lista(){
     cout << endl;
 }
 
-template <typename Elem>
+/*template <typename Elem>
 Elem & Lista<Elem>::Iterador::elemento_actual() {
     return it->elemento;
 }
@@ -136,7 +136,7 @@ void Lista<Elem>::Iterador::avanzar(){
 template <typename Elem>
 bool Lista<Elem>::Iterador::llego_al_final() const{
     return (it == NULL);
-}
+}*/
 
 template class Lista<unsigned int>;
 template class Lista<float>;
