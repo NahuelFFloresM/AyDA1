@@ -1,0 +1,188 @@
+# depslib dependency file v1.0
+1465509901 source:c:\users\nahuel\desktop\practicos\analisis y diseño de algoritmos\cb\tp-especial\arbol.cpp
+	"arbol.h"
+	<cstdlib>
+	<iostream>
+	<algorithm>
+
+1465509677 c:\users\nahuel\desktop\practicos\analisis y diseño de algoritmos\cb\tp-especial\arbol.h
+	"climits"
+
+1465508891 source:c:\users\nahuel\desktop\practicos\analisis y diseño de algoritmos\cb\tp-especial\lista.cpp
+	"lista.h"
+	<iostream>
+	<string>
+	<stdlib.h>
+
+1465847053 c:\users\nahuel\desktop\practicos\analisis y diseño de algoritmos\cb\tp-especial\lista.h
+
+1465935514 source:c:\users\nahuel\desktop\practicos\analisis y diseño de algoritmos\cb\tp-especial\main.cpp
+	"arbol.cpp"
+	"lista.cpp"
+	"Archivo.h"
+	<typeinfo>
+	<iostream>
+
+1465509901 c:\users\nahuel\desktop\practicos\analisis y diseño de algoritmos\cb\tp-especial\arbol.cpp
+	"arbol.h"
+	<cstdlib>
+	<iostream>
+	<algorithm>
+
+1465508891 c:\users\nahuel\desktop\practicos\analisis y diseño de algoritmos\cb\tp-especial\lista.cpp
+	"lista.h"
+	<iostream>
+	<string>
+	<stdlib.h>
+
+1465940528 c:\users\nahuel\desktop\practicos\analisis y diseño de algoritmos\cb\tp-especial\include\archivo.h
+	"../lista.h"
+	<string>
+
+1465847499 source:c:\users\nahuel\desktop\practicos\analisis y diseño de algoritmos\cb\tp-especial\src\archivo.cpp
+	"Archivo.h"
+
+1465940484 source:c:\users\nahuel\desktop\practicos\analisis y diseño de algoritmos\cb\tp-especial\src\diccionario.cpp
+	"Diccionario.h"
+
+1465941204 c:\users\nahuel\desktop\practicos\analisis y diseño de algoritmos\cb\tp-especial\include\diccionario.h
+	<../arbol.h>
+	<string>
+
+1465508892 source:c:\users\dante\desktop\tp-especial\lista.cpp
+	"lista.h"
+	<iostream>
+	<string>
+	<stdlib.h>
+
+1465847054 c:\users\dante\desktop\tp-especial\lista.h
+
+1465847500 source:c:\users\dante\desktop\tp-especial\src\archivo.cpp
+	"Archivo.h"
+
+1466449208 c:\users\dante\desktop\tp-especial\include\archivo.h
+	"../lista.h"
+	<string>
+
+1466451476 source:c:\users\dante\desktop\tp-especial\arbol.cpp
+	"arbol.h"
+	<cstdlib>
+	<iostream>
+	<algorithm>
+
+1466474619 c:\users\dante\desktop\tp-especial\arbol.h
+	"climits"
+
+1466450959 source:c:\users\dante\desktop\tp-especial\main.cpp
+	"arbol.h"
+	"lista.h"
+	"Archivo.h"
+	"Diccionario.h"
+	<typeinfo>
+	<iostream>
+	<stdio.h>
+	<math.h>
+	<string>
+	<fstream>
+
+1466451008 c:\users\dante\desktop\tp-especial\include\diccionario.h
+	<../arbol.h>
+	<string>
+
+1466451959 source:c:\users\dante\desktop\tp-especial\src\diccionario.cpp
+	"Diccionario.h"
+
+1467012779 source:c:\users\nahuel\desktop\tp-especial\arbol.cpp
+	"arbol.h"
+	<cstdlib>
+	<iostream>
+	<algorithm>
+
+1467012799 c:\users\nahuel\desktop\tp-especial\arbol.h
+	"climits"
+
+1467012817 source:c:\users\nahuel\desktop\tp-especial\lista.cpp
+	"lista.h"
+	<iostream>
+	<string>
+	<stdlib.h>
+
+1467010967 c:\users\nahuel\desktop\tp-especial\lista.h
+
+1467008105 source:c:\users\nahuel\desktop\tp-especial\main.cpp
+	"Archivo.h"
+	"Diccionario.h"
+	<typeinfo>
+	<iostream>
+	<stdio.h>
+	<math.h>
+	<string>
+	<fstream>
+
+1466989354 c:\users\nahuel\desktop\tp-especial\include\archivo.h
+	"../lista.h"
+	<string>
+	<fstream>
+
+1467031186 c:\users\nahuel\desktop\tp-especial\include\diccionario.h
+	<../lista.h>
+	<string>
+
+1466995054 source:c:\users\nahuel\desktop\tp-especial\src\archivo.cpp
+	"Archivo.h"
+	<iostream>
+	<fstream>
+
+1466992987 source:c:\users\nahuel\desktop\tp-especial\src\diccionario.cpp
+	"Diccionario.h"
+	<fstream>
+
+1652818458 source:c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\arbol.cpp
+	"arbol.h"
+	<cstdlib>
+	<iostream>
+	<algorithm>
+
+1652647959 c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\arbol.h
+	"climits"
+
+1652647881 source:c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\lista.cpp
+	"lista.h"
+	<iostream>
+	<string>
+	<stdlib.h>
+
+1652647929 c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\lista.h
+
+1652816787 source:c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\main.cpp
+	"arbol.cpp"
+	"lista.cpp"
+	"fila.cpp"
+	<iostream>
+
+1652816443 source:c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\fila.cpp
+	"fila.h"
+	<iostream>
+	<string>
+	<stdlib.h>
+
+1652811526 c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\fila.h
+
+1652818458 c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\arbol.cpp
+	"arbol.h"
+	<cstdlib>
+	<iostream>
+	<algorithm>
+
+1652647881 c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\lista.cpp
+	"lista.h"
+	<iostream>
+	<string>
+	<stdlib.h>
+
+1652816443 c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\fila.cpp
+	"fila.h"
+	<iostream>
+	<string>
+	<stdlib.h>
+
