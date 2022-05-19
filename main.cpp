@@ -15,16 +15,19 @@ int main(int argc, char *argv[])
     // Armar menu para confirmar posicion
     valores.agregar(1);
     valores.agregar(2);
-    valores.agregar(3,0);
+    valores.agregar(3,1);
     if (valores.eliminar_elemento(3)) cout << "Elemento eliminado"<< endl;
+    valores.iniciar_iterador();
+    ///Preguntar si lista vacia antes de pedir elemento??????-------------------------------
+    ///O armar Menu en ciclo?
+    cout << "Elemento iterador: " << valores.elemento_iterador() << endl;
+    valores.avanzar_iterador();
+    cout << "Avanznado Iterador" << endl;
+    cout << "Elemento iterador: " << valores.elemento_iterador() << endl;
 
     valores2.agregar("algo");
     valores2.agregar("algo2");
     valores2.agregar("algo3",2);
-    /**
-     *  verificar muestra en la funcion, luego se cambiara para que devuelva un booleano para que otra funcion
-     *  muestre el resultado.
-     */
     valores2.verificar("algo3");
     cout << "Lista enteros" << endl;
     valores.mostrar_lista();

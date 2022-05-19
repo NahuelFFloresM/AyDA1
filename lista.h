@@ -8,18 +8,6 @@ template <typename elemL> class Lista{
         nodo_lista * sig;
     };
 
-    /*public:
-        class Iterador {
-            friend class Lista;
-        public:
-            elemL & elemento_actual();
-            void avanzar();
-            bool llego_al_final() const;
-        private:
-            Iterador(Nodo * inicio) { it = inicio; }
-            Nodo * it;
-        }; // class Iterador*/
-
 
     int cant;
     void vaciar(nodo_lista * & primero);
@@ -29,21 +17,27 @@ template <typename elemL> class Lista{
     Lista();
     ~Lista();
 
-    nodo_lista * Primero;
+    nodo_lista * Primero, *it;
 
-//    Iterador devolver_iterador() { return Iterador(inicio); }
-
-    void agregar(const elemL elemento , int posicion = 1);
+    void agregar(const elemL elemento , int posicion = 0);
 
     int cantidad_elementos();
 
     void mostrar_lista();
 
-    void verificar(elemL elemento);
+    void verificar( const elemL elemento);
 
-    bool es_vacia();
+    bool es_vacia() const;
 
     bool eliminar_elemento(const elemL elemento);
+
+    void iniciar_iterador();
+
+    void avanzar_iterador();
+
+    elemL elemento_iterador();
+
+    bool final_iterador();
 
 };
 

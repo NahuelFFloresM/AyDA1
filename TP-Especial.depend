@@ -146,15 +146,15 @@
 1652647959 c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\arbol.h
 	"climits"
 
-1652647881 source:c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\lista.cpp
+1652992665 source:c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\lista.cpp
 	"lista.h"
 	<iostream>
 	<string>
 	<stdlib.h>
 
-1652647929 c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\lista.h
+1652993266 c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\lista.h
 
-1652816787 source:c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\main.cpp
+1652993261 source:c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\main.cpp
 	"arbol.cpp"
 	"lista.cpp"
 	"fila.cpp"
@@ -174,7 +174,7 @@
 	<iostream>
 	<algorithm>
 
-1652647881 c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\lista.cpp
+1652992665 c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\lista.cpp
 	"lista.h"
 	<iostream>
 	<string>
@@ -185,4 +185,6 @@
 	<iostream>
 	<string>
 	<stdlib.h>
+
+1652989153 source:c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\lista_iterador.cpp
 
