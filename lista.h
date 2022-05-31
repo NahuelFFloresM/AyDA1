@@ -23,9 +23,7 @@ template <typename elemL> class Lista{
 
     int cantidad_elementos();
 
-    void mostrar_lista();
-
-    void verificar( const elemL elemento);
+    bool verificar( const elemL elemento);
 
     bool es_vacia() const;
 

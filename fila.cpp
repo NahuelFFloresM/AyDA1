@@ -44,18 +44,14 @@ template <typename elemL> void Fila<elemL>::agregar(const elemL elemento){
     }
 
     this->cant++;
-    cout <<"Elemento agregado: " << elemento << endl;
 }
 
 template <typename elemL> int Fila<elemL>::cantidad_elementos(){
     return this->cant;
 }
 
-template <typename elemL> void Fila<elemL>::verificar(){
-    if (Primero)
-        cout << "El proximo elemento en la fila es "<< this->Primero->elemento << endl;
-    else
-        cout << "Fila Actualmente Vacia" << endl;
+template <typename elemL> elemL Fila<elemL>::verificar(){
+    return this->Primero->elemento;
 }
 
 template <typename elemL> bool Fila<elemL>::es_vacia(){

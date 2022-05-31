@@ -14,44 +14,55 @@ int main(int argc, char *argv[])
     Lista<string> valores2;
     // Armar menu para confirmar posicion
     valores.agregar(1);
+    cout << "Elemento Agregado: 1" << endl;
     valores.agregar(2);
+    cout << "Elemento Agregado: 2" << endl;
     valores.agregar(3,1);
+    cout << "Elemento Agregado: 3 en posición 1" << endl;
+    cout << "Eliminando elemento 3..." << endl;
     if (valores.eliminar_elemento(3)) cout << "Elemento eliminado"<< endl;
-    valores.iniciar_iterador();
-    ///Preguntar si lista vacia antes de pedir elemento??????-------------------------------
-    ///O armar Menu en ciclo?
-    cout << "Elemento iterador: " << valores.elemento_iterador() << endl;
+    else cout << "Elemento no encontrado"<< endl;
+    if (valores.es_vacia()) cout << "Lista vacia" << endl;
+    else cout << "Lista con elementos-" << endl;
+    cout << endl;
+    /// PRUEBA DE ITERADOR
+    cout << "//////Prueba de Iterador " << endl;
+    valores.iniciar_iterador(); // Iterador iniciado.
+    cout << "Elemento iterador: ";
+    if (!valores.final_iterador()) cout << valores.elemento_iterador() << endl;
+    cout << "Avanzando Iterador" << endl;
     valores.avanzar_iterador();
-    cout << "Avanznado Iterador" << endl;
-    cout << "Elemento iterador: " << valores.elemento_iterador() << endl;
+    cout << "Elemento iterador: ";
+    if (!valores.final_iterador()) cout << valores.elemento_iterador() << endl;
+    cout << "Avanzando Iterador" << endl;
+    valores.avanzar_iterador();
+    cout << "Elemento iterador: ";
+    if (!valores.final_iterador()) cout << valores.elemento_iterador() << endl;
+    else cout << "Fin iterador" << endl;
+
+    /// Prueba de lista con String para probar parametrización.
 
     valores2.agregar("algo");
     valores2.agregar("algo2");
     valores2.agregar("algo3",2);
-    valores2.verificar("algo3");
-    cout << "Lista enteros" << endl;
-    valores.mostrar_lista();
-    cout << endl;
-    cout << "Lista con string" << endl;
-    valores2.mostrar_lista();
-
-    if (valores.es_vacia()) cout << "Lista vacia" << endl;
-    else cout << "Lista con elementos-" << endl;
-
-    cout << "Cantidad: "<< valores.cantidad_elementos() << endl;
+    if (valores2.verificar("algo3")) cout << "Valor encontrado" << endl;
+    else cout << "No existe el valor en la lista" << endl;
+    /*Como el programa no encuentra error a la hora de ejecucion se ejecutaron bien la sentencias*/
     //----------------------------FILA
     cout << "----------------------------FILA" << endl;
+    cout << "Creando fila con valores: 1,2,3 " << endl;
     Fila<unsigned int> fila_vals;
     fila_vals.agregar(1);
     fila_vals.agregar(2);
     fila_vals.agregar(3);
+    fila_vals.agregar(4);
 
-    if (fila_vals.es_vacia()) cout << "Lista vacia" << endl;
-    else cout << "Lista con elementos-" << endl;
+    if (fila_vals.es_vacia()) cout << "Fila vacia" << endl;
+    else cout << "Fila con elementos" << endl;
     cout << "Cantidad: "<< fila_vals.cantidad_elementos() << endl;
     cout << "Eliminando elemento de fila" << endl;
     fila_vals.eliminar_elemento();
-    fila_vals.verificar();
+    cout << "Siguiente elemento: " << fila_vals.verificar() << endl;
 
     //------------------------ARBIN
     cout << "------------------------ARBIN" << endl;
@@ -78,11 +89,7 @@ int main(int argc, char *argv[])
     if (Arbol.es_vacio()) cout << "Arbol vacio" << endl;
     else cout << "Arbol con elementos" << endl;
 
-    /**
-        la funcion verificar/altura_arbol/mostrar_frontera necestia la raiz para empezar a recorrer, se podria crear una funcion
-        que reciba la peticion del cliente para facilitar el trabajo al usuario.
-    */
-    if (Arbin.verificar(Arbin.Raiz,"texto2")){
+    if (Arbin.verificar_elemento("texto2")){
         cout << "Elemento existente en el Arbol" << endl;
     }
     else cout << "Elemento inexistente en el Arbol" << endl;
@@ -93,7 +100,6 @@ int main(int argc, char *argv[])
     cout << "Altura Arbol: " << Arbol.altura_arbol(Arbol.Raiz) <<endl;
     cout << "Frontera Arbol: "<< endl;
     Arbol.mostrar_frontera(Arbol.Raiz);
-
 
     return 0;
 }

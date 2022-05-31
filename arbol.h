@@ -12,6 +12,9 @@ template <typename elemA> class Arbol{
 
 
     int cant;
+private:
+    bool verificar(nodo_arbol * cursor, elemA elemento);
+    bool es_hoja(nodo_arbol * cursor);
 
 public:
     Arbol();
@@ -23,7 +26,7 @@ public:
 
     int cantidad_elementos();
 
-    bool verificar(nodo_arbol * cursor,elemA elemento);
+    bool verificar_elemento(elemA elemento);
 
     bool es_vacio();
 
@@ -31,11 +34,10 @@ public:
 
     bool eliminar_elemento(const elemA elemento);
 
+    /// Funcion para mejorar flujo al agregar elemento
     void pre_agregar(const elemA elemento);
 
     void mostrar_inorder(nodo_arbol * cursor);
-
-    bool es_hoja(nodo_arbol * cursor);
 
     void mostrar_frontera(nodo_arbol * cursor);
 

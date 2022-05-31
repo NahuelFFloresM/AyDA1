@@ -49,7 +49,11 @@ template <typename elemA> void Arbol<elemA>::mostrar_inorder(nodo_arbol * cursor
     }
 }
 
-template <typename elemA> bool Arbol<elemA>::verificar(nodo_arbol * cursor,elemA elemento){
+template <typename elemA> bool Arbol<elemA>::verificar_elemento(elemA elemento){
+    return verificar(this->Raiz, elemento);
+}
+
+template <typename elemA> bool Arbol<elemA>::verificar(nodo_arbol * cursor, elemA elemento){
     if (cursor != NULL){
         if (cursor->elemento == elemento){
             return true;

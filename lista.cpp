@@ -61,26 +61,21 @@ template <typename elemL> void Lista<elemL>::agregar(const elemL elemento,int po
         this->Primero = aux;
     }
     this->cant++;
-    cout <<"Elemento agregado: " << elemento << endl;
 }
 
 template <typename elemL> int Lista<elemL>::cantidad_elementos(){
     return this->cant;
 }
 
-template <typename elemL> void Lista<elemL>::verificar( const elemL elemento){
+template <typename elemL> bool Lista<elemL>::verificar( const elemL elemento){
     nodo_lista * l = this->Primero;
-    bool found = false;
-    while ((!found) && (l != NULL)){
+    while (l != NULL){
         if (l->elemento == elemento){
-            found = true;
-            cout << "El elemento existe en la lista" << endl;
+            return true;
         }
-        else{
-            l = l->sig;
-        }
+        l = l->sig;
     }
-    if (l == NULL) cout << "El elemento no existe en la lista" << endl;
+    return false;
 }
 
 template <typename elemL> bool Lista<elemL>::es_vacia() const{
@@ -115,26 +110,17 @@ template <typename elemL> bool Lista<elemL>::eliminar_elemento(const elemL eleme
     return found;
 }
 
-template <typename elemL> void Lista<elemL>::mostrar_lista(){
-    while (Primero != NULL){
-        cout << Primero->elemento << "-";
-        Primero = Primero->sig;
-    }
-    cout << endl;
-}
-
 template <typename elemL> void Lista<elemL>::iniciar_iterador(){
     it = Primero;
 }
 
 template <typename elemL> void Lista<elemL>::avanzar_iterador(){
-    it = it->sig;
+    if (it) it = it->sig;
+    else it = NULL;
 }
 
 template <typename elemL> elemL Lista<elemL>::elemento_iterador(){
-    if (it != NULL){
-        return it->elemento;
-    }
+    return it->elemento;
 }
 
 template <typename elemL> bool Lista<elemL>::final_iterador(){

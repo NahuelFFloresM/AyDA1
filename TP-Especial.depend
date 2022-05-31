@@ -137,50 +137,50 @@
 	"Diccionario.h"
 	<fstream>
 
-1652818458 source:c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\arbol.cpp
+1653947965 source:c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\arbol.cpp
 	"arbol.h"
 	<cstdlib>
 	<iostream>
 	<algorithm>
 
-1652647959 c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\arbol.h
+1653949300 c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\arbol.h
 	"climits"
 
-1652992665 source:c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\lista.cpp
+1653946252 source:c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\lista.cpp
 	"lista.h"
 	<iostream>
 	<string>
 	<stdlib.h>
 
-1652993266 c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\lista.h
+1653946348 c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\lista.h
 
-1652993261 source:c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\main.cpp
+1653947991 source:c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\main.cpp
 	"arbol.cpp"
 	"lista.cpp"
 	"fila.cpp"
 	<iostream>
 
-1652816443 source:c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\fila.cpp
+1653342318 source:c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\fila.cpp
 	"fila.h"
 	<iostream>
 	<string>
 	<stdlib.h>
 
-1652811526 c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\fila.h
+1653342295 c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\fila.h
 
-1652818458 c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\arbol.cpp
+1653947965 c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\arbol.cpp
 	"arbol.h"
 	<cstdlib>
 	<iostream>
 	<algorithm>
 
-1652992665 c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\lista.cpp
+1653946252 c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\lista.cpp
 	"lista.h"
 	<iostream>
 	<string>
 	<stdlib.h>
 
-1652816443 c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\fila.cpp
+1653342318 c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\fila.cpp
 	"fila.h"
 	<iostream>
 	<string>

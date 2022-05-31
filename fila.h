@@ -23,7 +23,7 @@ template <typename elemL> class Fila{
 
     int cantidad_elementos();
 
-    void verificar();
+    elemL verificar();
 
     bool es_vacia();
 
