@@ -1,6 +1,6 @@
 #include "fila.h"
 
-#include <iostream>
+#include "Cliente.h"
 #include <string>
 #include <stdlib.h>
 
@@ -73,3 +73,4 @@ template class Fila<float>;
 template class Fila<string>;
 template class Fila<char>;
 template class Fila<bool>;
+template class Fila<Cliente>;

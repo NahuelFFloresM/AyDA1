@@ -38,9 +38,17 @@
 		<Unit filename="arbol.h" />
 		<Unit filename="fila.cpp" />
 		<Unit filename="fila.h" />
+		<Unit filename="include/Banco.h" />
+		<Unit filename="include/Cliente.h" />
+		<Unit filename="include/Criterio.h" />
+		<Unit filename="include/fila_criterio.h" />
 		<Unit filename="lista.cpp" />
 		<Unit filename="lista.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/Banco.cpp" />
+		<Unit filename="src/Cliente.cpp" />
+		<Unit filename="src/Criterio.cpp" />
+		<Unit filename="src/fila_criterio.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

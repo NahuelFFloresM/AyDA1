@@ -1,7 +1,10 @@
-#ifndef FILA_EJEMPLO_H
-#define FILA_EJEMPLO_H
+#ifndef COLA_H
+#define COLA_H
 
-template <typename elemL> class Fila{
+
+template <typename elemL> class Cola
+{
+    protected:
 
     private:
         struct nodo_lista {
@@ -15,8 +18,8 @@ template <typename elemL> class Fila{
 
     public:
 
-        Fila();
-        ~Fila();
+        Cola();
+        virtual ~Cola();
 
         nodo_lista * Primero;
 
@@ -29,7 +32,6 @@ template <typename elemL> class Fila{
         bool es_vacia();
 
         bool eliminar_elemento();
-
 };
 
-#endif
+#endif // COLA_H
