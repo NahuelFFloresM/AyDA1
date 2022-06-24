@@ -2,15 +2,20 @@
 
 void Criterio::setCriterio(const std::string crit){
     this->operacion = crit;
-}
-
-bool Criterio::cumple_criterio(std::string crit){
-    return (crit == this->operacion);
-}
-
-bool Criterio::tiene_cuenta(Cliente cli){
-    return (cli.getEstado() == true);
 };
+
+void Criterio::setCuenta(bool cuenta){
+  this->cuenta = cuenta;
+};
+
+bool Criterio::cumple_criterio(std::string crit, Cliente cli){
+    if ((crit == this->operacion) && (this->cuenta == cli.getEstado())) return true;
+    return false;
+};
+
+std::string Criterio::getCriterio(){
+    return this->operacion;
+}
 
 Criterio::Criterio()
 {

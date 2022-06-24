@@ -28,12 +28,11 @@ template <typename elemL> void Lista<elemL>::vaciar(nodo_lista * & primero) {
     }
 }
 
-template <typename elemL> void Lista<elemL>::agregar(const elemL elemento,int posicion){
-    nodo_lista * aux = new nodo_lista;
+template <typename elemL> void Lista<elemL>::agregar(elemL elemento,int posicion){
+    nodo_lista * aux = new nodo_lista();
     aux->elemento = elemento;
     aux->sig = NULL;
     nodo_lista * l = this->Primero;
-
     if (l != NULL){
         if (posicion == 0){
             nodo_lista * cursor = l;
@@ -115,8 +114,14 @@ template <typename elemL> void Lista<elemL>::iniciar_iterador(){
 }
 
 template <typename elemL> void Lista<elemL>::avanzar_iterador(){
-    if (it) it = it->sig;
-    else it = NULL;
+    if (it){
+        it_previo = it;
+        it = it->sig;
+    }
+    else {
+        it_previo = it;
+        it = NULL;
+    }
 }
 
 template <typename elemL> elemL Lista<elemL>::elemento_iterador(){
@@ -126,6 +131,18 @@ template <typename elemL> elemL Lista<elemL>::elemento_iterador(){
 template <typename elemL> bool Lista<elemL>::final_iterador(){
     return (it == NULL);
 }
+
+template <typename elemL> elemL Lista<elemL>::primer_elemento(){
+    return this->Primero->elemento;
+}
+
+template <typename elemL> void Lista<elemL>::remover_it_nodo(){
+    nodo_lista *aux = it;
+    it = it->sig;
+    it_previo->sig = it;
+    delete aux;
+}
+
 
 template class Lista<unsigned int>;
 template class Lista<float>;

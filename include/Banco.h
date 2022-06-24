@@ -2,8 +2,11 @@
 #define BANCO_H
 
 #include "../fila.h"
+#include "fila_criterio.h"
 #include "Cliente.h"
 #include "Criterio.h"
+#include "../lista.h"
+#include "Operacion.h"
 
 #include <string>
 
@@ -17,16 +20,24 @@ class Banco
 
     private:
 
-        Fila<Cliente> cola_llegada;
-        Fila<Cliente> pr_cola_especial;
-        Fila<Cliente> sg_cola_especial;
+        Fila<Cliente> * cola_llegada = new Fila<Cliente>();
+        fila_criterio * pr_cola_especial;
+        fila_criterio * sg_cola_especial;
+        Lista<Cliente> * operaciones;
+
 
     public:
-        bool IngresarCliente(Cliente cl);
-        Cliente Atender_Prox_Cliente();
+        void reencolar_clientes(fila_criterio * cola);
+        void IngresarCliente(Cliente cl);
+        Cliente Atender_Prox_Cliente(int opcion);
         bool Abrir_Cola_Criterio(const std::string crit);
         bool Cerrar_Cola_Especial(const int cola);
-        void Listar_Operaciones(const int minimo, const int maximo);
+        bool pr_cola_abierto();
+        bool sg_cola_abierto();
+        std::string pr_cola_getcrit();
+        std::string sg_cola_getcrit();
+        void Listar_Operaciones(const int minimo, const int maximo) const;
+        int cantidad_colas_abiertas();
 
 
 };

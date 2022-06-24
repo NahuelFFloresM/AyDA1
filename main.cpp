@@ -7,23 +7,78 @@
 
 using namespace std;
 
-void ingresar_usuario(){
+Banco  * bnc = new Banco();
+int opcion = -1;
 
+void ingresar_usuario(){
+    system("cls");
+    /// Destinos: persona, banco o impuesto
+    /// Operaciones: Retiro, Depósito, Transferencia o Pago
+    int nro = rand() % 100+1;
+
+    Cliente nuevoC;
+    nuevoC.setNombre("Cliente" + nro);
+    nuevoC.setEdad(nro);
+    nuevoC.setMonto(rand() % 10000+1);
+    // TO DO generar ingresos random
+    nuevoC.setDestino("persona");
+    nuevoC.setOperacion("retiro");
+    nuevoC.setEstado(true);
+    bnc->IngresarCliente(nuevoC);
+    cout << "Nuevo cliente ingresado" << endl;
+    system("pause");
 };
-void setear_usuario(){};
-void abrir_cola(){};
-void cerrar_cola(){};
+
+void abrir_cola(){
+    if (bnc->cantidad_colas_abiertas() < 2){
+        string criterio = "retiro";
+        bnc->Abrir_Cola_Criterio(criterio);
+    } else {
+        cout << "Cantidad maxima de colas alcanzadas" << endl;
+    }
+    system("pause");
+};
+
+void proxClienteCola(){
+    if (bnc->cantidad_colas_abiertas() == 0){
+        bnc->Atender_Prox_Cliente(1);
+    } else {
+        int opcion_cola = 1;
+        cout << "Seleccione cola para atender cliente" << endl;
+        cout << "1 - Cola general" << endl;
+        if (bnc->pr_cola_abierto()) cout << "2 - Cola con Criterio: " << bnc->pr_cola_getcrit() << endl;
+        if (bnc->sg_cola_abierto()) cout << "3 - Cola con Criterio: " << bnc->sg_cola_getcrit() << endl;
+        cout << "---> ";
+        cin >> opcion_cola;
+        bnc->Atender_Prox_Cliente(opcion_cola);
+    }
+};
+void cerrar_cola(){
+    int cola;
+    if ((!bnc->pr_cola_abierto()) && (!bnc->sg_cola_abierto())){
+        cout << "Ninguna Cola especila Abierta" << endl;
+    } else {
+        cout << "Seleccion Cola a cerrar" << endl;
+        if (bnc->pr_cola_abierto()) cout << "1 - Cola con criterio " << bnc->pr_cola_getcrit() << endl;
+        if (bnc->sg_cola_abierto()) cout << "2 - COla con criterio " << bnc->sg_cola_getcrit() << endl;
+        cout << "---> ";
+        cin >> cola;
+        if (bnc->Cerrar_Cola_Especial(cola)) cout << "Cola cerrada" << endl;
+        else cout << "La cola no se encuentra vacia" << endl;
+        system("pause");
+    }
+};
 void listar_operaciones(){};
 
 int main(int argc, char *argv[])
 {
 
     /// TPE PARTE 1
-//    //--------------------LISTA
+//    --------------------LISTA
 //    cout << "--------------------LISTA" << endl;
 //    Lista<unsigned int> valores;
 //    Lista<string> valores2;
-//    // Armar menu para confirmar posicion
+//     Armar menu para confirmar posicion
 //    valores.agregar(1);
 //    cout << "Elemento Agregado: 1" << endl;
 //    valores.agregar(2);
@@ -36,7 +91,7 @@ int main(int argc, char *argv[])
 //    if (valores.es_vacia()) cout << "Lista vacia" << endl;
 //    else cout << "Lista con elementos-" << endl;
 //    cout << endl;
-//    /// PRUEBA DE ITERADOR
+//    / PRUEBA DE ITERADOR
 //    cout << "//////Prueba de Iterador " << endl;
 //    valores.iniciar_iterador(); // Iterador iniciado.
 //    cout << "Elemento iterador: ";
@@ -51,17 +106,17 @@ int main(int argc, char *argv[])
 //    if (!valores.final_iterador()) cout << valores.elemento_iterador() << endl;
 //    else cout << "Fin iterador" << endl;
 //
-//    /// Prueba de lista con String para probar parametrización.
+//    / Prueba de lista con String para probar parametrización.
 //
 //    valores2.agregar("algo");
 //    valores2.agregar("algo2");
 //    valores2.agregar("algo3",2);
 //    if (valores2.verificar("algo3")) cout << "Valor encontrado" << endl;
 //    else cout << "No existe el valor en la lista" << endl;
-//    /*Como el programa no encuentra error a la hora de ejecucion se ejecutaron bien la sentencias*/
-//    //----------------------------FILA
+//    Como el programa no encuentra error a la hora de ejecucion se ejecutaron bien la sentencias
+//    ----------------------------FILA
 //    cout << "----------------------------FILA" << endl;
-//    cout << "Creando fila con valores: 1,2,3 " << endl;
+//    cout << "Creando fila con valores: 1,2,3,4 " << endl;
 //    Fila<unsigned int> fila_vals;
 //    fila_vals.agregar(1);
 //    fila_vals.agregar(2);
@@ -73,7 +128,7 @@ int main(int argc, char *argv[])
 //    cout << "Cantidad: "<< fila_vals.cantidad_elementos() << endl;
 //    cout << "Eliminando elemento de fila" << endl;
 //    fila_vals.eliminar_elemento();
-//    cout << "Siguiente elemento: " << fila_vals.verificar() << endl;
+//    cout << "Siguiente elemento: " << fila_vals.obtenerElemento() << endl;
 //
 //    //------------------------ARBIN
 //    cout << "------------------------ARBIN" << endl;
@@ -115,9 +170,9 @@ int main(int argc, char *argv[])
     /// TPE PARTE 2
 
     bool uso_sistema = true;
-    int opcion = -1;
-    Banco bnc;
+
     while(uso_sistema){
+        system("cls");
         cout << "Sistema Banco" << endl;
         cout <<"--Menu-" <<endl;
         cout <<"1. Ingresar Cliente" <<endl;
@@ -131,7 +186,7 @@ int main(int argc, char *argv[])
         /// No se chequea si no es un nro el valor ingresado
         cin >> opcion;
         if (opcion == 1) ingresar_usuario();
-        if (opcion == 2) setear_usuario();
+        if (opcion == 2) proxClienteCola();
         if (opcion == 3) abrir_cola();
         if (opcion == 4) cerrar_cola();
         if (opcion == 5) listar_operaciones();

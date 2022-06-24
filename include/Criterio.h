@@ -9,13 +9,15 @@ class Criterio
         Criterio();
         virtual ~Criterio();
         void setCriterio(const std::string crit);
-        bool cumple_criterio(const std::string crit);
-        bool tiene_cuenta(Cliente cli);
+        void setCuenta(bool estado);
+        std::string getCriterio();
+        bool cumple_criterio(const std::string crit,Cliente cli);
 
     protected:
 
     private:
         std::string operacion;
+        bool cuenta;;
 };
 
 #endif // CRITERIO_H

@@ -1,34 +1,33 @@
 #ifndef FILA_EJEMPLO_H
 #define FILA_EJEMPLO_H
 
+#include "lista.h"
+#include "Cliente.h"
+
 template <typename elemL> class Fila{
 
     private:
-        struct nodo_lista {
-            elemL elemento;
-            nodo_lista * sig;
-        };
 
-
-        int cant;
-        void vaciar(nodo_lista * & primero);
+        Lista<elemL> lista;
 
     public:
 
         Fila();
         ~Fila();
 
-        nodo_lista * Primero;
-
-        void agregar(const elemL elemento);
+        void agregar(elemL elemento);
 
         int cantidad_elementos();
 
         elemL verificar();
 
+        elemL obtenerElemento();
+
         bool es_vacia();
 
         bool eliminar_elemento();
+
+        Lista<Cliente>* filtar_x_criterio(std::string crit);
 
 };
 
