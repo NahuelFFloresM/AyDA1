@@ -81,6 +81,22 @@ void Banco::IngresarCliente(Cliente cl){
     this->cola_llegada->agregar(cl);
 }
 
+void Banco::iniciar_iterador() {
+    this->operaciones->iniciar_iterador();
+}
+
+void Banco::avanzar_iterador () {
+    this ->operaciones->avanzar_iterador();
+}
+
+Cliente Banco::elemento_iterador () {
+    this ->operaciones->elemento_iterador();
+}
+
+bool Banco::final_iterador () {
+    this ->operaciones->final_iterador();
+}
+
 Banco::Banco()
 {
     //ctor
