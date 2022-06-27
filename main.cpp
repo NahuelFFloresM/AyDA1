@@ -68,7 +68,32 @@ void cerrar_cola(){
         system("pause");
     }
 };
-void listar_operaciones(){};
+void listar_operaciones(){
+    bnc->iniciar_iterador();
+    float suma = 0;
+    int contador = 0;
+    int minimo, maximo;
+    cout << "Ingresar monto minimo: " << endl;
+    cin >> minimo;
+    cout << "Ingresar monto maximo: " << endl;
+    cin >> maximo;
+    while (not bnc->final_iterador()) {
+        if ((bnc->elemento_iterador().getMonto() >= minimo) && (bnc->elemento_iterador().getMonto() <= maximo)) {
+            cout << bnc->elemento_iterador().getNombre() << endl;
+            cout << bnc->elemento_iterador().getEdad() << endl;
+            cout << bnc->elemento_iterador().getOperacion() << endl;
+            cout << bnc->elemento_iterador().getDestino() << endl;
+            cout << bnc->elemento_iterador().getMonto() << endl;
+            if (bnc->elemento_iterador().getEstado()) {cout << "Es cliente del banco" << endl;}
+            else {cout << "No es cliente del banco" << endl;}
+            suma += bnc->elemento_iterador().getEdad();
+            contador++;
+        }
+        bnc->avanzar_iterador();
+    }
+    cout << "El promedio de edadde los clientes del listado es " << (suma / contador) << endl;
+};
+
 
 int main(int argc, char *argv[])
 {
