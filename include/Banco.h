@@ -35,7 +35,10 @@ class Banco
         bool sg_cola_abierto();
         std::string pr_cola_getcrit();
         std::string sg_cola_getcrit();
-        void Listar_Operaciones(const int minimo, const int maximo) const;
+        void iniciar_iterador();
+        void avanzar_iterador();
+        Cliente elemento_iterador();
+        bool final_iterador();
         int cantidad_colas_abiertas();
 
 
