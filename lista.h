@@ -2,6 +2,7 @@
 #define LISTA_EJEMPLO_H
 
 #include <stdlib.h>
+#include "Cliente.h"
 
 template <typename elemL> class Lista{
 
@@ -38,6 +39,8 @@ template <typename elemL> class Lista{
         void avanzar_iterador();
 
         elemL elemento_iterador();
+
+        elemL obtener_elemento_it();
 
         bool final_iterador();
 

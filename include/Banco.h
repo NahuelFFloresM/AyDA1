@@ -6,7 +6,6 @@
 #include "Cliente.h"
 #include "Criterio.h"
 #include "../lista.h"
-#include "Operacion.h"
 
 #include <string>
 
@@ -29,8 +28,8 @@ class Banco
     public:
         void reencolar_clientes(fila_criterio * cola);
         void IngresarCliente(Cliente cl);
-        Cliente Atender_Prox_Cliente(int opcion);
-        bool Abrir_Cola_Criterio(const std::string crit);
+        void Atender_Prox_Cliente(int opcion);
+        bool Abrir_Cola_Criterio(std::string crit);
         bool Cerrar_Cola_Especial(const int cola);
         bool pr_cola_abierto();
         bool sg_cola_abierto();

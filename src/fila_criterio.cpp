@@ -2,6 +2,10 @@
 
 
 
+fila_criterio::fila_criterio(Criterio criter)
+{
+    this->criter = criter;
+}
 
 fila_criterio::fila_criterio()
 {

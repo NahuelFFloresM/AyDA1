@@ -9,24 +9,25 @@ int Banco::cantidad_colas_abiertas(){
     return cant;
 }
 std::string Banco::pr_cola_getcrit(){
-    return this->pr_cola_especial->getCriterio();
+    return this->pr_cola_especial->getCriterioText();
 }
 
 std::string Banco::sg_cola_getcrit(){
-    return this->sg_cola_especial->getCriterio();
+    return this->sg_cola_especial->getCriterioText();
 }
 
 
 void Banco::reencolar_clientes(fila_criterio * cola){
-    Lista<Cliente> * clientes = new Lista<Cliente>();
-    clientes = cola_llegada->filtar_x_criterio(cola->getCriterio());
+    Lista<Cliente> clientes;
+    clientes = cola_llegada->filtrar_x_criterio(cola->getCriterio());
 };
 
 bool Banco::Abrir_Cola_Criterio(const std::string crit){
-    // TO DO
+    Criterio criter;
+    criter.setCriterio(crit);
     cout << "abriendo cola criterio" << endl;
     if (!this->pr_cola_especial){
-        this->pr_cola_especial = new fila_criterio();
+        this->pr_cola_especial = new fila_criterio(criter);
         this->reencolar_clientes(pr_cola_especial);
         return true;
     }
@@ -41,7 +42,7 @@ bool Banco::sg_cola_abierto(){
 /*
 *   @param opcion contiene el nro de cola a tomar el cliente
 */
-Cliente Banco::Atender_Prox_Cliente(int opcion){
+void Banco::Atender_Prox_Cliente(int opcion){
     if (opcion == 1){
         this->operaciones->agregar(this->cola_llegada->obtenerElemento());
     }
@@ -51,8 +52,6 @@ Cliente Banco::Atender_Prox_Cliente(int opcion){
     if (opcion == 3){
         this->operaciones->agregar(this->sg_cola_especial->obtenerElemento());
     }
-    Cliente aux;
-    return aux;
 };
 
 bool Banco::Cerrar_Cola_Especial(const int cola){
@@ -70,11 +69,11 @@ bool Banco::Cerrar_Cola_Especial(const int cola){
 
 void Banco::IngresarCliente(Cliente cl){
     /// INGRESAR SEGUN COLAS CREADAS
-    if (pr_cola_abierto() && pr_cola_especial->getCriterio() == cl.getOperacion()){
+    if (pr_cola_abierto() && pr_cola_especial->getCriterio().cumple_criterio(cl)){
         pr_cola_especial->agregar(cl);
         return;
     }
-    if (sg_cola_abierto() && sg_cola_especial->getCriterio() == cl.getOperacion()){
+    if (sg_cola_abierto() && sg_cola_especial->getCriterio().cumple_criterio(cl)){
         sg_cola_especial->agregar(cl);
         return;
     }

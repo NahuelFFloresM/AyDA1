@@ -41,7 +41,6 @@
 		<Unit filename="include/Banco.h" />
 		<Unit filename="include/Cliente.h" />
 		<Unit filename="include/Criterio.h" />
-		<Unit filename="include/Operacion.h" />
 		<Unit filename="include/fila_criterio.h" />
 		<Unit filename="lista.cpp" />
 		<Unit filename="lista.h" />
@@ -49,7 +48,6 @@
 		<Unit filename="src/Banco.cpp" />
 		<Unit filename="src/Cliente.cpp" />
 		<Unit filename="src/Criterio.cpp" />
-		<Unit filename="src/Operacion.cpp" />
 		<Unit filename="src/fila_criterio.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />

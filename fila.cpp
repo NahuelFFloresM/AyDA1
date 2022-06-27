@@ -71,9 +71,15 @@ template <typename elemL> bool Fila<elemL>::eliminar_elemento(){
     return this->lista.eliminar_elemento(this->lista.primer_elemento());
 }
 
-template <typename elemL> Lista<Cliente>* Fila<elemL>::filtar_x_criterio(std::string crit){
-    Lista<Cliente> * filtrados = new Lista<Cliente>();
-
+template <typename elemL> Lista<Cliente> Fila<elemL>::filtrar_x_criterio(Criterio crit){
+    Lista<Cliente> filtrados;
+//    this->lista.iniciar_iterador();
+//    while(!lista.final_iterador()){
+//        elemL aux = lista.elemento_iterador();
+//        if (crit.cumple_criterio(aux)){
+//
+//        }
+//    }
     return filtrados;
 };
 

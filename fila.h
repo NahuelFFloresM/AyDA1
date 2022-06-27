@@ -3,6 +3,7 @@
 
 #include "lista.h"
 #include "Cliente.h"
+#include "Criterio.h"
 
 template <typename elemL> class Fila{
 
@@ -27,7 +28,7 @@ template <typename elemL> class Fila{
 
         bool eliminar_elemento();
 
-        Lista<Cliente>* filtar_x_criterio(std::string crit);
+        Lista<Cliente> filtrar_x_criterio(Criterio crit);
 
 };
 

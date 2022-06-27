@@ -1,5 +1,6 @@
 #include "lista.h"
 
+
 #include <iostream>
 #include <string>
 #include <stdlib.h>
@@ -136,6 +137,13 @@ template <typename elemL> elemL Lista<elemL>::primer_elemento(){
     return this->Primero->elemento;
 }
 
+template <typename elemL> elemL Lista<elemL>::obtener_elemento_it(){
+    elemL aux = it->elemento;
+    it = it->sig;
+    it_previo->sig = it;
+    return aux;
+}
+
 template <typename elemL> void Lista<elemL>::remover_it_nodo(){
     nodo_lista *aux = it;
     it = it->sig;
@@ -149,3 +157,4 @@ template class Lista<float>;
 template class Lista<string>;
 template class Lista<char>;
 template class Lista<bool>;
+template class Lista<Cliente>;

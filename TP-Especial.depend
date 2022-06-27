@@ -146,14 +146,15 @@
 1653949300 c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\arbol.h
 	"climits"
 
-1655852338 source:c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\lista.cpp
+1656355258 source:c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\lista.cpp
 	"lista.h"
 	<iostream>
 	<string>
 	<stdlib.h>
 
-1655787918 c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\lista.h
+1656355273 c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\lista.h
 	<stdlib.h>
+	"Cliente.h"
 
 1655937640 source:c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\main.cpp
 	"arbol.cpp"
@@ -162,16 +163,17 @@
 	"Banco.h"
 	<iostream>
 
-1656022586 source:c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\fila.cpp
+1656355424 source:c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\fila.cpp
 	"fila.h"
 	"Cliente.h"
 	<string>
 	<stdlib.h>
 	<iostream>
 
-1656022581 c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\fila.h
+1656355334 c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\fila.h
 	"lista.h"
 	"Cliente.h"
+	"Criterio.h"
 
 1653947965 c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\arbol.cpp
 	"arbol.h"
@@ -179,13 +181,13 @@
 	<iostream>
 	<algorithm>
 
-1655852338 c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\lista.cpp
+1656355258 c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\lista.cpp
 	"lista.h"
 	<iostream>
 	<string>
 	<stdlib.h>
 
-1656022630 c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\fila.cpp
+1656355744 c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\fila.cpp
 	"fila.h"
 	"Cliente.h"
 	<string>
@@ -200,33 +202,32 @@
 1655404155 c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\include\cliente.h
 	<string>
 
-1656022616 source:c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\src\banco.cpp
+1656355466 source:c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\src\banco.cpp
 	"Banco.h"
 	"../fila.cpp"
 	"../lista.cpp"
 
-1656022606 c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\include\banco.h
+1656339470 c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\include\banco.h
 	"../fila.h"
 	"fila_criterio.h"
 	"Cliente.h"
 	"Criterio.h"
 	"../lista.h"
-	"Operacion.h"
 	<string>
 
-1655326860 c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\include\criterio.h
+1656355238 c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\include\criterio.h
 	"Cliente.h"
 	<string>
 
-1655326883 source:c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\src\criterio.cpp
+1656355116 source:c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\src\criterio.cpp
 	"Criterio.h"
 
 1654547275 c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\include\cola.h
 
-1656022454 source:c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\src\fila_criterio.cpp
+1656339439 source:c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\src\fila_criterio.cpp
 	"fila_criterio.h"
 
-1656022443 c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\include\fila_criterio.h
+1656355241 c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\include\fila_criterio.h
 	"../fila.h"
 	"Cliente.h"
 	"Criterio.h"

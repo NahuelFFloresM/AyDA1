@@ -14,20 +14,30 @@ class fila_criterio: public Fila<Cliente> {
 
     public:
         fila_criterio();
+        fila_criterio(Criterio criter);
         virtual ~fila_criterio();
 
         void setCriterio(const std::string crit){
             criter.setCriterio(crit);
         }
 
-        bool cumple_criterio(std::string crit, Cliente cli){
-            if (criter.cumple_criterio(crit,cli)) return true;
+        bool cumple_criterio(Cliente cli){
+            if (criter.cumple_criterio(cli)) return true;
+            return false;
+        }
+
+        bool cumple_criterio(Cliente * cli){
+            if (criter.cumple_criterio(cli)) return true;
             return false;
         }
 
 
-        std::string getCriterio(){
+        std::string getCriterioText(){
             return this->criter.getCriterio();
+        }
+
+        Criterio getCriterio(){
+            return this->criter;
         }
 
         bool abrir_cola(){
