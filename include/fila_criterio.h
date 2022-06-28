@@ -26,12 +26,6 @@ class fila_criterio: public Fila<Cliente> {
             return false;
         }
 
-        bool cumple_criterio(Cliente * cli){
-            if (criter.cumple_criterio(cli)) return true;
-            return false;
-        }
-
-
         std::string getCriterioText(){
             return this->criter.getCriterio();
         }
@@ -39,16 +33,16 @@ class fila_criterio: public Fila<Cliente> {
         Criterio getCriterio(){
             return this->criter;
         }
-
-        bool abrir_cola(){
-            this->abierta = true;
-            return true;
-        }
-
-        bool cerrar_cola() {
-            this->abierta = false;
-            return true;
-        }
+//
+//        bool abrir_cola(){
+//            this->abierta = true;
+//            return true;
+//        }
+//
+//        bool cerrar_cola() {
+//            this->abierta = false;
+//            return true;
+//        }
 
 
 };

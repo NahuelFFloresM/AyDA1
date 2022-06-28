@@ -47,7 +47,7 @@ std::string Cliente::getDestino(){
 }
 
 bool Cliente::operator==(Cliente cl2){
-    return this->nombre.compare(cl2.getNombre());
+    return this->nombre == cl2.getNombre();
 }
 
 Cliente::Cliente()

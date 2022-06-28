@@ -83,7 +83,7 @@ template <typename elemL> bool Lista<elemL>::es_vacia() const{
     return true;
 }
 
-template <typename elemL> bool Lista<elemL>::eliminar_elemento(const elemL elemento){
+template <typename elemL> bool Lista<elemL>::eliminar_elemento(elemL elemento){
     nodo_lista * cursor = Primero;
     nodo_lista * aux = cursor;
     bool found = false;

@@ -26,9 +26,19 @@ template <typename elemL> class Fila{
 
         bool es_vacia();
 
-        bool eliminar_elemento();
+        void eliminar_elemento();
 
-        Lista<Cliente> filtrar_x_criterio(Criterio crit);
+        void eliminar_elem_lista(elemL L);
+
+        void iniciar_iterador();
+
+        void avanzar_iterador();
+
+        bool final_iterador();
+
+        elemL elemento_iterador();
+
+        elemL obtener_elemento_it();
 
 };
 

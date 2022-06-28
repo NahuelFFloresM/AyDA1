@@ -15,6 +15,27 @@ template <typename elemL> Fila<elemL>::Fila() {
 template <typename elemL> Fila<elemL>::~Fila() {
 
 }
+
+template <typename elemL> void Fila<elemL>::iniciar_iterador(){
+    this->lista.iniciar_iterador();
+};
+
+template <typename elemL> elemL Fila<elemL>::elemento_iterador(){
+    return this->lista.elemento_iterador();
+};
+
+template <typename elemL> void Fila<elemL>::avanzar_iterador(){
+    this->lista.avanzar_iterador();
+};
+
+template <typename elemL> elemL Fila<elemL>::obtener_elemento_it(){
+    return this->lista.obtener_elemento_it();
+};
+
+template <typename elemL> bool Fila<elemL>::final_iterador(){
+    return this->lista.final_iterador();
+};
+
 //
 //template <typename elemL> void Fila<elemL>::vaciar(nodo_lista * & primero) {
 //
@@ -51,7 +72,6 @@ template <typename elemL> int Fila<elemL>::cantidad_elementos(){
 
 template <typename elemL> elemL Fila<elemL>::obtenerElemento(){
     elemL aux = this->lista.primer_elemento();
-    this->lista.eliminar_elemento(aux);
     return aux;
 }
 
@@ -59,29 +79,16 @@ template <typename elemL> bool Fila<elemL>::es_vacia(){
     return (this->lista.es_vacia());
 }
 
-template <typename elemL> bool Fila<elemL>::eliminar_elemento(){
-//    nodo_lista * cursor = this->Primero;
-//    if (cursor != NULL){
-//        this->Primero = this->Primero->sig;
-//        delete(cursor);
-//        return true;
-//    }
-//    return false;
-
-    return this->lista.eliminar_elemento(this->lista.primer_elemento());
+template <typename elemL> void Fila<elemL>::eliminar_elemento(){
+    elemL aux = this->lista.primer_elemento();
+    this->lista.eliminar_elemento(aux);
 }
 
-template <typename elemL> Lista<Cliente> Fila<elemL>::filtrar_x_criterio(Criterio crit){
-    Lista<Cliente> filtrados;
-//    this->lista.iniciar_iterador();
-//    while(!lista.final_iterador()){
-//        elemL aux = lista.elemento_iterador();
-//        if (crit.cumple_criterio(aux)){
-//
-//        }
-//    }
-    return filtrados;
-};
+template <typename elemL> void Fila<elemL>::eliminar_elem_lista(elemL L){
+    this->lista.eliminar_elemento(L);
+}
+
+
 
 
 template class Fila<unsigned int>;

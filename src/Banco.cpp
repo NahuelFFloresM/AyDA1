@@ -4,8 +4,8 @@
 
 int Banco::cantidad_colas_abiertas(){
     int cant = 0;
-    if (!this->pr_cola_especial) cant++;
-    if (!this->sg_cola_especial) cant++;
+    if (this->pr_cola_especial) cant++;
+    if (this->sg_cola_especial) cant++;
     return cant;
 }
 std::string Banco::pr_cola_getcrit(){
@@ -18,62 +18,91 @@ std::string Banco::sg_cola_getcrit(){
 
 
 void Banco::reencolar_clientes(fila_criterio * cola){
-    Lista<Cliente> clientes;
-    clientes = cola_llegada->filtrar_x_criterio(cola->getCriterio());
+    cola_llegada->iniciar_iterador();
+    while (!(cola_llegada->final_iterador())){
+        Cliente aux = cola_llegada->elemento_iterador();
+        if (cola->cumple_criterio(aux)){
+            cola->agregar(aux);
+            cola_llegada->eliminar_elem_lista(aux);
+        }
+        cola_llegada->avanzar_iterador();
+    }
 };
 
-bool Banco::Abrir_Cola_Criterio(const std::string crit){
+bool Banco::Abrir_Cola_Criterio(const std::string crit, bool tieneCuenta){
     Criterio criter;
     criter.setCriterio(crit);
-    cout << "abriendo cola criterio" << endl;
-    if (!this->pr_cola_especial){
+    criter.setCuenta(tieneCuenta);
+    if (this->pr_cola_especial == NULL){
         this->pr_cola_especial = new fila_criterio(criter);
         this->reencolar_clientes(pr_cola_especial);
+        return true;
+    }
+    if (this->sg_cola_especial == NULL && crit != pr_cola_especial->getCriterioText()) {
+        this->sg_cola_especial = new fila_criterio(criter);
+        this->reencolar_clientes(sg_cola_especial);
         return true;
     }
     return false;
 }
 bool Banco::pr_cola_abierto(){
-    return this->pr_cola_especial->abrir_cola();
+    if (this->pr_cola_especial == NULL) return false;
+    return true;
 }
 bool Banco::sg_cola_abierto(){
-    return this->sg_cola_especial->abrir_cola();
+    if (this->sg_cola_especial == NULL) return false;
+    return true;
 }
 /*
 *   @param opcion contiene el nro de cola a tomar el cliente
 */
 void Banco::Atender_Prox_Cliente(int opcion){
     if (opcion == 1){
-        this->operaciones->agregar(this->cola_llegada->obtenerElemento());
+        if (cola_llegada->cantidad_elementos() > 0){
+            this->operaciones->agregar(this->cola_llegada->obtenerElemento());
+            cola_llegada->eliminar_elemento();
+        }
     }
     if (opcion == 2){
-        this->operaciones->agregar(this->pr_cola_especial->obtenerElemento());
+        if (pr_cola_especial->cantidad_elementos() > 0){
+            this->operaciones->agregar(this->pr_cola_especial->obtenerElemento());
+            pr_cola_especial->eliminar_elemento();
+        }
     }
     if (opcion == 3){
-        this->operaciones->agregar(this->sg_cola_especial->obtenerElemento());
+        if (sg_cola_especial->cantidad_elementos() > 0){
+            this->operaciones->agregar(this->sg_cola_especial->obtenerElemento());
+            sg_cola_especial->eliminar_elemento();
+        }
     }
 };
 
 bool Banco::Cerrar_Cola_Especial(const int cola){
     if (cola == 1){
-        if (this->pr_cola_especial->es_vacia()){
-            return pr_cola_especial->cerrar_cola();
+        if (this->pr_cola_especial->cantidad_elementos() == 0){
+            delete(pr_cola_especial);
+            this->pr_cola_especial = NULL;
+            return true;
+//            return pr_cola_especial->cerrar_cola();
         }
     } else {
-        if (this->sg_cola_especial->es_vacia()){
-            return sg_cola_especial->cerrar_cola();
+        if (this->sg_cola_especial->cantidad_elementos() == 0){
+            delete(sg_cola_especial);
+            this->sg_cola_especial = NULL;
+            return true;
+//            return sg_cola_especial->cerrar_cola();
         }
     }
     return false;
 };
 
 void Banco::IngresarCliente(Cliente cl){
-    /// INGRESAR SEGUN COLAS CREADAS
-    if (pr_cola_abierto() && pr_cola_especial->getCriterio().cumple_criterio(cl)){
+    /// INGRESAN COLAS CREADAS
+    if ( (pr_cola_especial) && pr_cola_especial->getCriterio().cumple_criterio(cl)){
         pr_cola_especial->agregar(cl);
         return;
     }
-    if (sg_cola_abierto() && sg_cola_especial->getCriterio().cumple_criterio(cl)){
+    if ( (sg_cola_especial) && sg_cola_especial->getCriterio().cumple_criterio(cl)){
         sg_cola_especial->agregar(cl);
         return;
     }
@@ -85,23 +114,28 @@ void Banco::iniciar_iterador() {
 }
 
 void Banco::avanzar_iterador () {
-    this ->operaciones->avanzar_iterador();
+    this->operaciones->avanzar_iterador();
 }
 
 Cliente Banco::elemento_iterador () {
-    this ->operaciones->elemento_iterador();
+    return this->operaciones->elemento_iterador();
 }
 
 bool Banco::final_iterador () {
-    this ->operaciones->final_iterador();
+    return this->operaciones->final_iterador();
 }
 
 Banco::Banco()
 {
-    //ctor
+    this->pr_cola_especial = NULL;
+    this->sg_cola_especial = NULL;
+    this->operaciones = new Lista<Cliente>();
 }
 
 Banco::~Banco()
 {
-    //dtor
+    delete(this->cola_llegada);
+    delete(this->pr_cola_especial);
+    delete(this->sg_cola_especial);
+    delete(this->operaciones);
 }

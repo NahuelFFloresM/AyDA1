@@ -32,7 +32,7 @@ template <typename elemL> class Lista{
 
         bool es_vacia() const;
 
-        bool eliminar_elemento(const elemL elemento);
+        bool eliminar_elemento(elemL elemento);
 
         void iniciar_iterador();
 

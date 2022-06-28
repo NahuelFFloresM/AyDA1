@@ -17,7 +17,10 @@ void ingresar_usuario(){
     int nro = rand() % 100+1;
 
     Cliente nuevoC;
-    nuevoC.setNombre("Cliente" + nro);
+    string nombre = "cliente ";
+    nombre+=std::to_string(nro);
+    nuevoC.setNombre(nombre);
+    cout << nombre<< endl;
     nuevoC.setEdad(nro);
     nuevoC.setMonto(rand() % 10000+1);
     // TO DO generar ingresos random
@@ -31,8 +34,11 @@ void ingresar_usuario(){
 
 void abrir_cola(){
     if (bnc->cantidad_colas_abiertas() < 2){
+        /** No se realiza el pedido de los criterios para ahorrar tiempo y codigo
+        */
         string criterio = "retiro";
-        bnc->Abrir_Cola_Criterio(criterio);
+        bool tieneCuenta = true;
+        bnc->Abrir_Cola_Criterio(criterio,tieneCuenta);
     } else {
         cout << "Cantidad maxima de colas alcanzadas" << endl;
     }
@@ -51,6 +57,7 @@ void proxClienteCola(){
         cout << "---> ";
         cin >> opcion_cola;
         bnc->Atender_Prox_Cliente(opcion_cola);
+        system("pause");
     }
 };
 void cerrar_cola(){
@@ -92,6 +99,7 @@ void listar_operaciones(){
         bnc->avanzar_iterador();
     }
     cout << "El promedio de edadde los clientes del listado es " << (suma / contador) << endl;
+    system("pause");
 };
 
 
