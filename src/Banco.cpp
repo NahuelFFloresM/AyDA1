@@ -89,11 +89,11 @@ void Banco::avanzar_iterador () {
 }
 
 Cliente Banco::elemento_iterador () {
-    this ->operaciones->elemento_iterador();
+    return this ->operaciones->elemento_iterador();
 }
 
 bool Banco::final_iterador () {
-    this ->operaciones->final_iterador();
+    return this ->operaciones->final_iterador();
 }
 
 Banco::Banco()
