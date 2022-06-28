@@ -293,12 +293,12 @@
 	"Criterio.h"
 	<string>
 
-1656455672 source:g:\proyects\ayda1\src\banco.cpp
+1656457045 source:g:\proyects\ayda1\src\banco.cpp
 	"Banco.h"
 	"../fila.cpp"
 	"../lista.cpp"
 
-1656445999 g:\proyects\ayda1\include\banco.h
+1656456847 g:\proyects\ayda1\include\banco.h
 	"../fila.h"
 	"fila_criterio.h"
 	"Cliente.h"
@@ -318,4 +318,17 @@
 	<iostream>
 	<string>
 	<stdlib.h>
+
+1656456827 source:g:\proyects\ayda1\main.cpp
+	"arbol.cpp"
+	"lista.cpp"
+	"fila.cpp"
+	"Banco.h"
+	<iostream>
+
+1653947965 g:\proyects\ayda1\arbol.cpp
+	"arbol.h"
+	<cstdlib>
+	<iostream>
+	<algorithm>
 

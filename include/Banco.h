@@ -28,7 +28,7 @@ class Banco
     public:
         void reencolar_clientes(fila_criterio * cola);
         void IngresarCliente(Cliente cl);
-        void Atender_Prox_Cliente(int opcion);
+        Cliente Atender_Prox_Cliente(int opcion);
         bool Abrir_Cola_Criterio(std::string crit,bool tieneCuenta);
         bool Cerrar_Cola_Especial(const int cola);
         bool pr_cola_abierto();

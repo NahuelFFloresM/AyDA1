@@ -56,25 +56,33 @@ bool Banco::sg_cola_abierto(){
 /*
 *   @param opcion contiene el nro de cola a tomar el cliente
 */
-void Banco::Atender_Prox_Cliente(int opcion){
+Cliente Banco::Atender_Prox_Cliente(int opcion){
+    Cliente aux;
     if (opcion == 1){
         if (cola_llegada->cantidad_elementos() > 0){
-            this->operaciones->agregar(this->cola_llegada->obtenerElemento());
+            aux = this->cola_llegada->obtenerElemento();
+            this->operaciones->agregar(aux);
             cola_llegada->eliminar_elemento();
+            return aux;
         }
     }
     if (opcion == 2){
         if (pr_cola_especial->cantidad_elementos() > 0){
+            aux = this->pr_cola_especial->obtenerElemento();
             this->operaciones->agregar(this->pr_cola_especial->obtenerElemento());
             pr_cola_especial->eliminar_elemento();
+            return aux;
         }
     }
     if (opcion == 3){
         if (sg_cola_especial->cantidad_elementos() > 0){
+            aux = this->sg_cola_especial->obtenerElemento();
             this->operaciones->agregar(this->sg_cola_especial->obtenerElemento());
             sg_cola_especial->eliminar_elemento();
+            return aux;
         }
     }
+    return aux;
 };
 
 bool Banco::Cerrar_Cola_Especial(const int cola){
