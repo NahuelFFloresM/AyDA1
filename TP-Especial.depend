@@ -239,3 +239,83 @@
 
 1654643327 c:\users\arcan\desktop\facultad\algoritmos 1\algoritmos\tpespecial\include\operacion.h
 
+1653947965 source:g:\proyects\ayda1\arbol.cpp
+	"arbol.h"
+	<cstdlib>
+	<iostream>
+	<algorithm>
+
+1653949300 g:\proyects\ayda1\arbol.h
+	"climits"
+
+1656454276 source:g:\proyects\ayda1\fila.cpp
+	"fila.h"
+	"Cliente.h"
+	<string>
+	<stdlib.h>
+	<iostream>
+
+1656452897 g:\proyects\ayda1\fila.h
+	"lista.h"
+	"Cliente.h"
+	"Criterio.h"
+
+1656452554 g:\proyects\ayda1\lista.h
+	<stdlib.h>
+	"Cliente.h"
+
+1655404155 g:\proyects\ayda1\include\cliente.h
+	<string>
+
+1656355238 g:\proyects\ayda1\include\criterio.h
+	"Cliente.h"
+	<string>
+
+1656452578 source:g:\proyects\ayda1\lista.cpp
+	"lista.h"
+	<iostream>
+	<string>
+	<stdlib.h>
+
+1656453532 source:g:\proyects\ayda1\src\cliente.cpp
+	"Cliente.h"
+
+1656447420 source:g:\proyects\ayda1\src\criterio.cpp
+	"Criterio.h"
+	<iostream>
+
+1656339439 source:g:\proyects\ayda1\src\fila_criterio.cpp
+	"fila_criterio.h"
+
+1656446380 g:\proyects\ayda1\include\fila_criterio.h
+	"../fila.h"
+	"Cliente.h"
+	"Criterio.h"
+	<string>
+
+1656455672 source:g:\proyects\ayda1\src\banco.cpp
+	"Banco.h"
+	"../fila.cpp"
+	"../lista.cpp"
+
+1656445999 g:\proyects\ayda1\include\banco.h
+	"../fila.h"
+	"fila_criterio.h"
+	"Cliente.h"
+	"Criterio.h"
+	"../lista.h"
+	<string>
+
+1656454276 g:\proyects\ayda1\fila.cpp
+	"fila.h"
+	"Cliente.h"
+	<string>
+	<stdlib.h>
+	<iostream>
+
+1656452578 g:\proyects\ayda1\lista.cpp
+	"lista.h"
+	<iostream>
+	<string>
+	<stdlib.h>
+

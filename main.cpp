@@ -56,6 +56,15 @@ void proxClienteCola(){
         if (bnc->sg_cola_abierto()) cout << "3 - Cola con Criterio: " << bnc->sg_cola_getcrit() << endl;
         cout << "---> ";
         cin >> opcion_cola;
+//        Cliente clAtendido = bnc->Atender_Prox_Cliente(opcion_cola);
+//        cout << "Se atendio al cliente: " << endl;
+//        cout << clAtendido.getNombre() << endl;
+//        cout << clAtendido.getEdad() << endl;
+//        cout << clAtendido.getOperacion() << endl;
+//        cout << clAtendido.getDestino() << endl;
+//        cout << clAtendido.getMonto() << endl;
+//        if (clAtendido.getEstado()) { cout << "Es cliente del banco" << endl; }
+//        else { cout << "No es cliente del banco" << endl; }
         bnc->Atender_Prox_Cliente(opcion_cola);
         system("pause");
     }
