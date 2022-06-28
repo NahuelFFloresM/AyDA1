@@ -51,6 +51,7 @@ void proxClienteCola(){
         cout << "---> ";
         cin >> opcion_cola;
         Cliente clAtendido = bnc->Atender_Prox_Cliente(opcion_cola);
+        cout << "Se atendio al cliente: " << endl;
         cout << clAtendido.getNombre() << endl;
         cout << clAtendido.getEdad() << endl;
         cout << clAtendido.getOperacion() << endl;
