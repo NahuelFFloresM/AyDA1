@@ -92,14 +92,12 @@ bool Banco::Cerrar_Cola_Especial(const int cola){
             delete(pr_cola_especial);
             this->pr_cola_especial = NULL;
             return true;
-//            return pr_cola_especial->cerrar_cola();
         }
     } else {
         if (this->sg_cola_especial->cantidad_elementos() == 0){
             delete(sg_cola_especial);
             this->sg_cola_especial = NULL;
             return true;
-//            return sg_cola_especial->cerrar_cola();
         }
     }
     return false;

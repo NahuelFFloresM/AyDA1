@@ -114,6 +114,7 @@ void listar_operaciones(){
     cin >> minimo;
     cout << "Ingresar monto maximo: " << endl;
     cin >> maximo;
+    /**No se realiza control validos de montos*/
     while (not bnc->final_iterador()) {
         if ((bnc->elemento_iterador().getMonto() >= minimo) && (bnc->elemento_iterador().getMonto() <= maximo)) {
             cout << bnc->elemento_iterador().getNombre() << endl;

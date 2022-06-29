@@ -12,7 +12,6 @@ class Criterio
         void setCuenta(bool estado);
         std::string getCriterio();
         bool cumple_criterio(Cliente cli);
-        bool cumple_criterio(Cliente * cli);
 
     protected:
 

@@ -14,11 +14,6 @@ bool Criterio::cumple_criterio(Cliente cli){
     return false;
 };
 
-//bool Criterio::cumple_criterio(Cliente * cli){
-//    if ((this->operacion == this->operacion) && (this->cuenta == cli->getEstado())) return true;
-//    return false;
-//};
-
 std::string Criterio::getCriterio(){
     return this->operacion;
 }

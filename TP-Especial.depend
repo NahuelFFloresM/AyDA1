@@ -267,7 +267,7 @@
 1655404155 g:\proyects\ayda1\include\cliente.h
 	<string>
 
-1656355238 g:\proyects\ayda1\include\criterio.h
+1656510499 g:\proyects\ayda1\include\criterio.h
 	"Cliente.h"
 	<string>
 
@@ -319,7 +319,7 @@
 	<string>
 	<stdlib.h>
 
-1656508538 source:g:\proyects\ayda1\main.cpp
+1656508767 source:g:\proyects\ayda1\main.cpp
 	"arbol.cpp"
 	"lista.cpp"
 	"fila.cpp"
