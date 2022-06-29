@@ -58,6 +58,7 @@ bool Banco::sg_cola_abierto(){
 */
 Cliente Banco::Atender_Prox_Cliente(int opcion){
     Cliente aux;
+    aux.setNombre("vacio");
     if (opcion == 1){
         if (cola_llegada->cantidad_elementos() > 0){
             aux = this->cola_llegada->obtenerElemento();

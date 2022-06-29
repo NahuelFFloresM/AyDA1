@@ -15,7 +15,7 @@ void ingresar_usuario(){
     /// Destinos: persona, banco o impuesto
     /// Operaciones: Retiro, Depósito, Transferencia o Pago
     int nro = rand() % 100+1;
-
+    /// Cliente 1
     Cliente nuevoC;
     string nombre = "cliente ";
     nombre+=std::to_string(nro);
@@ -27,8 +27,23 @@ void ingresar_usuario(){
     nuevoC.setDestino("persona");
     nuevoC.setOperacion("retiro");
     nuevoC.setEstado(true);
-    bnc->IngresarCliente(nuevoC);
+    /// Cliente 2
+    nro = rand() % 100+1;
+    Cliente nuevoC2;
+    string nombre2 = "cliente ";
+    nombre2+=std::to_string(nro);
+    nuevoC2.setNombre(nombre);
+    cout << nombre<< endl;
+    nuevoC2.setEdad(nro);
+    nuevoC2.setMonto(rand() % 10000+1);
+    // TO DO generar ingresos random
+    nuevoC2.setDestino("persona");
+    nuevoC2.setOperacion("retiro");
+    nuevoC2.setEstado(false);
     cout << "Nuevo cliente ingresado" << endl;
+    /// Ingresos
+    bnc->IngresarCliente(nuevoC);
+    bnc->IngresarCliente(nuevoC2);
     system("pause");
 };
 
@@ -51,23 +66,28 @@ void proxClienteCola(){
         clAtendido = bnc->Atender_Prox_Cliente(1);
     } else {
         int opcion_cola = 1;
-        cout << "Seleccione cola para atender cliente" << endl;
+        cout << "Seleccione cola para atender cliente(Cola de llegada por defecto)" << endl;
         cout << "1 - Cola general" << endl;
         if (bnc->pr_cola_abierto()) cout << "2 - Cola con Criterio: " << bnc->pr_cola_getcrit() << endl;
         if (bnc->sg_cola_abierto()) cout << "3 - Cola con Criterio: " << bnc->sg_cola_getcrit() << endl;
         cout << "---> ";
         cin >> opcion_cola;
+        if ((opcion_cola < 1) && (opcion_cola > 3)) opcion_cola = 1;
         clAtendido = bnc->Atender_Prox_Cliente(opcion_cola);
 
     }
-    cout << "Se atendio al cliente: " << endl;
-    cout << clAtendido.getNombre() << endl;
-    cout << clAtendido.getEdad() << endl;
-    cout << clAtendido.getOperacion() << endl;
-    cout << clAtendido.getDestino() << endl;
-    cout << clAtendido.getMonto() << endl;
-    if (clAtendido.getEstado()) { cout << "Es cliente del banco" << endl; }
-    else { cout << "No es cliente del banco" << endl; }
+    if (clAtendido.getNombre() != "vacio"){
+        cout << "Se atendio al cliente: " << endl;
+        cout << clAtendido.getNombre() << endl;
+        cout << clAtendido.getEdad() << endl;
+        cout << clAtendido.getOperacion() << endl;
+        cout << clAtendido.getDestino() << endl;
+        cout << clAtendido.getMonto() << endl;
+        if (clAtendido.getEstado()) { cout << "Es cliente del banco" << endl; }
+        else { cout << "No es cliente del banco" << endl; }
+    } else {
+        cout << "No hay Clientes en la cola" << endl;
+    }
     system("pause");
 };
 void cerrar_cola(){

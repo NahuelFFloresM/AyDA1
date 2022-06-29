@@ -287,13 +287,13 @@
 1656339439 source:g:\proyects\ayda1\src\fila_criterio.cpp
 	"fila_criterio.h"
 
-1656446380 g:\proyects\ayda1\include\fila_criterio.h
+1656506049 g:\proyects\ayda1\include\fila_criterio.h
 	"../fila.h"
 	"Cliente.h"
 	"Criterio.h"
 	<string>
 
-1656457045 source:g:\proyects\ayda1\src\banco.cpp
+1656508400 source:g:\proyects\ayda1\src\banco.cpp
 	"Banco.h"
 	"../fila.cpp"
 	"../lista.cpp"
@@ -319,7 +319,7 @@
 	<string>
 	<stdlib.h>
 
-1656456827 source:g:\proyects\ayda1\main.cpp
+1656508538 source:g:\proyects\ayda1\main.cpp
 	"arbol.cpp"
 	"lista.cpp"
 	"fila.cpp"

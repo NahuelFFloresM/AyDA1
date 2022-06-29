@@ -33,17 +33,6 @@ class fila_criterio: public Fila<Cliente> {
         Criterio getCriterio(){
             return this->criter;
         }
-//
-//        bool abrir_cola(){
-//            this->abierta = true;
-//            return true;
-//        }
-//
-//        bool cerrar_cola() {
-//            this->abierta = false;
-//            return true;
-//        }
-
 
 };
 
